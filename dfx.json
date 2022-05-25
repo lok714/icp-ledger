@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "icp": {
+      "main": "src/icp/main.mo",
+      "type": "motoko"
+    },
+    "ledger": {
+      "type": "custom",
+      "candid": "src/ledger/ledger.did",
+      "wasm": "target/wasm32-unknown-unknown/release/ledger.wasm",
+      "build": "cargo build --target wasm32-unknown-unknown --release --package ledger"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.8.4",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
